@@ -1,0 +1,35 @@
+{
+    "people": [
+      {
+        "name": "John Doe",
+        "age": 30,
+        "hobbies": ["Reading", "Cycling", "Cooking"],
+        "contact": {
+          "email": "johndoe@example.com",
+          "phone": "+1-555-123-4567"
+        },
+        "isEmployed": true
+      },
+      {
+        "name": "Jane Smith",
+        "age": 25,
+        "hobbies": ["Photography", "Traveling", "Dancing"],
+        "contact": {
+          "email": "janesmith@example.com",
+          "phone": "+1-555-987-6543"
+        },
+        "isEmployed": false
+      },
+      {
+        "name": "Bob Johnson",
+        "age": 40,
+        "hobbies": ["Fishing", "Gardening", "Hiking"],
+        "contact": {
+          "email": "bobjohnson@example.com",
+          "phone": "+1-555-555-1234"
+        },
+        "isEmployed": true
+      }
+    ]
+  }
+  
