@@ -1,0 +1,11 @@
+#carpetas
+banco/_pycache_
+banco/build
+mensajes/
+
+
+clave.md
+#archivos spec
+*.db
+*.json
+*.key
