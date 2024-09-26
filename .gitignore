@@ -1,7 +1,7 @@
 #carpetas
-banco/_pycache_
+banco/__pycache__
 banco/build
-mensajes/
+
 
 
 clave.md

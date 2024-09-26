@@ -1,20 +1,29 @@
 from cryptography.fernet import Fernet
+import os.path
 
 def genera_clave():
-	clave = Fernet.generate_key()
-	with open("clave.key","wb") as archivo_clave:
-		archivo_clave.write(clave)
+	if os.path.exists("clave.key") == False:	
+		clave = Fernet.generate_key()
+		with open("clave.key","wb") as archivo_clave:
+			archivo_clave.write(clave)
+	return open("clave.key", "rb").read()
 
-def cargar_clave():
-	return open("clave.key","rb").read()
 
-genera_clave()
-clave = cargar_clave()
-mensaje = "Mi mensaje".encode()
 
-f = Fernet(clave)
-encriptado = f.encrypt(mensaje)
-print(encriptado)
+clave = genera_clave()
 
-dessen = f.decrypt(encriptado)
-print(dessen)
+while True:
+	forma = input("que desea encriptar o desencriptar \nE o D: ")
+	mensaje = input("inserta mensaje: ")
+	mens = mensaje.encode()
+	f = Fernet(clave)
+
+	if forma.lower() == "e":
+		encriptado = f.encrypt(mens)
+		print(encriptado)
+
+	elif forma.lower() == "d":
+		desencriptado = f.decrypt(mens)
+		print(desencriptado)
+	else:
+		break
