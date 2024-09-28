@@ -1,0 +1,7 @@
+sqlite3
+tkinter
+cryptography.fernet
+PIL
+pyperclip
+colorama
+music

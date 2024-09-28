@@ -1,5 +1,7 @@
 from PIL import Image
 import pyperclip
+
+
 ASCII_CHARS = ['.',',',':',';','+','*','?','%','S','#','@']
 
 def resize_image(image, new_width=100):
