@@ -41,13 +41,9 @@ Este repositorio contiene varios proyectos desarrollados en Python. Para instala
 
 -  **Instrucciones de Instalación**:
 
-		```
-
 		bash cd Arte-ASCII
 
 		pip install -r requirements.txt
-
-		```
 
 
   
@@ -76,13 +72,10 @@ Este repositorio contiene varios proyectos desarrollados en Python. Para instala
 
 -  **Instrucciones de Instalación**:
 
-		```
 
 		bash cd banco
 
 		pip install -r requirements.txt
-
-		```
 
   
 
@@ -110,13 +103,9 @@ Este repositorio contiene varios proyectos desarrollados en Python. Para instala
 
 -  **Instrucciones de Instalación**:
 
-		```
-
 		bash: cd encriptacion
 
 		pip install -r requirements.txt
-
-		```
 
   
   
@@ -145,10 +134,6 @@ Este repositorio contiene varios proyectos desarrollados en Python. Para instala
 
 -  **Instrucciones de Instalación**:
 
-		```
-
 		bash: cd trenes
 
 		pip install -r requirements.txt
-
-		```
