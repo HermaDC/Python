@@ -1,6 +1,7 @@
 #carpetas
 banco/__pycache__
 banco/build
+__pycache__/*
 
 
 

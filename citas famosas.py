@@ -1,16 +1,5 @@
 import random
 
-"""citas = {
-        "John Lannon": "La vida es lo que pasa mientras estás ocupado haciendo otros planes.",
-        "Steve Jobs": "La única forma de hacer un gran trabajo es amar lo que haces.",
-        "Dalai Lama": "La felicidad no es algo hecho. Viene de tus propias acciones.",
-        "Nelson Mandela": "La educación es el arma más poderosa que puedes usar para cambiar el mundo."
-    }
-
-for i in range(0,2):
-    print(random.choice(citas))
-    print("eso \n")
-"""
 # Lista de citas de personas famosas
 citas2 = [
     {"cita": "La vida es lo que pasa mientras estás ocupado haciendo otros planes.", "autor": "John Lennon"},
@@ -29,7 +18,7 @@ citas2 = [
 ]
 
 # Función para generar una cita aleatoria
-for i in range(0,3):
+for i in range(3):
     cita_seleccionada = random.choice(citas2)
     print(f'"{cita_seleccionada["cita"]}" - {cita_seleccionada["autor"]}')
 
