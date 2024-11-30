@@ -32,7 +32,7 @@ class Jugador:
 class Aliado(Jugador):
     pass
 
-def combate_grupal(aliados, enemigos):
+def _combate_grupal(aliados, enemigos):
     for ali, ene in zip_longest(aliados, enemigos, fillvalue=None):
         if ene and ali:
             ali.atacar(ene)
@@ -48,7 +48,7 @@ def lucha(jugador, enemigo, aliados=(), otros_enemigos=()):
         opcion = input("Atacas(a) o no haces nada(b)? ").lower()
         if opcion == "a":
             print("¡Atacas!")
-            combate_grupal(aliados, otros_enemigos)
+            _combate_grupal(aliados, otros_enemigos)
             jugador.atacar(enemigo)
             if enemigo.vida > 0:
                 enemigo.atacar(jugador)
