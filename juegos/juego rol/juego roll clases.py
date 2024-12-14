@@ -53,8 +53,8 @@ def main():
         print("Mientras curas al elfo, un orco te intenta atacar pero consigues salvar al elfo, ahora es tu amigo")
         amigo = Aliado(random.choice(NOMBRES), "elfo", ENEMIGOS["elfo"][0],ENEMIGOS["elfo"][1])
         ogro = Mounstro("pedo", random.choice(ENEDIS))
-        lucha(jugador, ogro, (amigo,), ())
-    raise NotImplementedError
+        lucha(jugador, ogro, (amigo, Aliado("juan", "duende", 10, 6)), (Mounstro("juan", ENEDIS[2]),))
+    raise NotImplementedError("se necesita seguir con el desarrollo")
     # Aquí puedes continuar con el juego si el jugador decide saltarse el tutorial
     # El código para el juego real comenzaría aquí, adaptando el código del tutorial si es necesario
 

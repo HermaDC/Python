@@ -1,46 +1,46 @@
 from system import RailwaySystem, Train, Switch, Simulation  # Importar clases y métodos
+print("clases cargadas")
 from ver_vias import draw_railway_network  # Importar la función de visualización
+print("importado todo, creando sistema")
 
-# Crear sistema ferroviario
-system = RailwaySystem()
-print("sistema creado")
 
-# Añadir estaciones y vías
-station = ["A", "B", "C", "D", "E", "F", "G", "X", "Y", "Z"]
-for i in station:
-    system.tracks.add_station(i)
-print("estaciones creadas")
 
-system.tracks.add_bidirectional_track("A", "F", 2)
-system.tracks.add_bidirectional_track("F", "Y", 1)
-system.tracks.add_bidirectional_track("Y", "B", 2)
-system.tracks.add_track("C", "X", 1)
-system.tracks.add_track("X", "G", 1)
-system.tracks.add_track("G", "D", 2)
-system.tracks.add_track("Z", "E", 1)
-system.tracks.add_track("F", "G", 1)
-system.tracks.add_track("X", "Y", 1)
-system.tracks.add_track("Y", "Z", 1)
-system.tracks.add_track("E", "B", 1)
-print("vias creadas")
+def init(station, trains) -> None:
+    for i in station:
+        system.tracks.add_station(i)
+    print("estaciones creadas")
 
-# Añadir un switch
-switch = Switch(id="S1", connections=[("F", "Y"), ("F", "G")])
-system.add_switch(switch)
+    system.tracks.add_bidirectional_track("A", "F", 2)
+    system.tracks.add_bidirectional_track("F", "Y", 1)
+    system.tracks.add_bidirectional_track("Y", "B", 2)
+    system.tracks.add_track("C", "X", 1)
+    system.tracks.add_track("X", "G", 1)
+    system.tracks.add_track("G", "D", 2)
+    system.tracks.add_track("Z", "E", 1)
+    system.tracks.add_track("F", "G", 1)
+    system.tracks.add_track("X", "Y", 1)
+    system.tracks.add_track("Y", "Z", 1)
+    system.tracks.add_track("E", "B", 1)
+    print("vias creadas")
+    
+    id = {}
+    for i in trains:
+        system.add_train(i)
+        system.find_route(i.id)
+        id[i.id] = i.position
+def run():
+    simulation.run(30)
 
-train1 = Train("T1", "A", "B")
-train2 = Train(id="T2", position="B", destination="A")
+if __name__ == "__main__":
+    print("importado todo, creando sistema")
+    system = RailwaySystem()
+    print("sistema creado")
 
-system.add_train(train1)
-system.find_route(train1.id)
-system.add_train(train2)
-system.find_route(train2.id)
+    station = ["A", "B", "C", "D", "E", "F", "G", "X", "Y", "Z"]  #Añadir estaciones y vías
+    trenes = [Train("T5", "A", "B"), Train("T6", "A", "Y")]
+    init(station, trenes)
 
-simulation = Simulation(system)
-
-# Mover trenes
-simulation.run(30)
-
-# Representar visualmente las vías
-draw_railway_network(system.tracks.network, {"T2": train2.position, "T1": train1.position})
-
+    simulation = Simulation(system)
+    run()
+      
+    draw_railway_network(system.tracks.network, id)  # Representar visualmente las vías

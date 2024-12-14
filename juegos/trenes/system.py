@@ -132,6 +132,7 @@ class Simulation:
         """Ejecuta la simulación en intervalos de tiempo."""
         for _ in range(steps):
             for train_id in self.system.trains:
-                self.system.move_train(train_id, time_step)
+                if self.system.trains[train_id].position != self.system.trains[train_id].destination:
+                    self.system.move_train(train_id, time_step)
+                
             time.sleep(0.2)  
-            print("\n")
