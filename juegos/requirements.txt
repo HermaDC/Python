@@ -1,2 +1,3 @@
-music
 tkinter
+netwokx
+matplotlib.pyplot
